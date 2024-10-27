@@ -99,7 +99,7 @@ def main():
     #     predict = torch.argmax(net.forward(x[0].view(-1, 28 * 28)))
     #     plt.figure(n)
     #     plt.imshow(x[0].view(28, 28))
-    #     plt.title('prediction:' + str(int(predict)))
+    #     plt.title('prediction:' + str(int(predict)))#图片可视化，随机提取一百张图片，主打一个好玩
     # plt.show()
 
 
@@ -112,76 +112,6 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def main():
-#     train_data=get_data_loader(is_train=True)
-#     test_data=get_data_loader(is_train=False)
-#     net=Net().to(divice)
-#     print('initial accuracy',evaluate(test_data,net))
-#     optimizer=torch.optim.Adam(net.parameters(),lr=0.0005)
-    
-#     # for epoch in range(100):
-#     #     for (x,y) in train_data:
-#     #         x=x.view(-1,28*28).to(divice)
-#     #         y=y.to(divice)
-#     #         net.zero_grad()
-#     #         output=net(x)
-#     #         loss=torch.nn.functional.nll_loss(output,y)
-#     #         loss.backward()
-#     #         optimizer.step()
-#     #     print('epoch', epoch, 'accuracy', evaluate(test_data, net))
-        
-
-# def evaluate(test_data, net):
-#     n_correct = 0
-#     n_total = 0
-#     with torch.no_grad():
-#         for (x, y) in test_data:
-#             # 将数据发送到GPU(这个02是没有的)
-#             x = x.view(-1, 28 * 28).to(divice)
-#             y = y.to(divice)
-#             output = net(x)
-#             _,predicted = torch.max(output, 1)
-#             n_correct += (predicted == y).sum().item()
-#             n_total += y.size(0)
-#     return n_correct / n_total
-
-
-
-
-# if __name__ == "__main__":
-#     main() 
-        
     
             
             
