@@ -96,7 +96,7 @@ def main():
     # for (n, (x, _)) in enumerate(test_data):
     #     if n > 100:
     #          break
-    #     predict = torch.argmax(net.forward(x[0].view(-1, 28 * 28)))
+    #     predict = torch.argmax(net.forward(x[0].view(-1, 28 * 28).to(device))
     #     plt.figure(n)
     #     plt.imshow(x[0].view(28, 28))
     #     plt.title('prediction:' + str(int(predict)))#图片可视化，随机提取一百张图片，主打一个好玩
