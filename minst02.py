@@ -50,6 +50,7 @@ def main():
             net.zero_grad()
             output = net.forward(x.view(-1, 28 * 28))
             loss = torch.nn.functional.nll_loss(output, y)
+            loss.backward()
             optimizer.step()
         print('epoch', epoch, 'accuracy', evaluate(test_data, net))
 
